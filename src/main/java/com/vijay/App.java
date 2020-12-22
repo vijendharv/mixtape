@@ -12,11 +12,15 @@ import java.util.List;
 
 public class App {
 
-
     public static void main(String[] args){
 
+        // This application expects paths to 2 files
+        // 1) Path to mixtape.json
+        // 2) Path to changes.json (Changes that needed to be applied to mixtape)
         if (args.length != 2) {
-            System.out.println("Requires 2 parameters - First one being mixtape json file and the second one being changes json file.");
+            System.out.println("This application expects paths to 2 files");
+            System.out.println("1) Path to mixtape.json");
+            System.out.println("2) Path to changes.json (Changes that needed to be applied to mixtape");
             System.exit(1);
         }
 
@@ -29,10 +33,13 @@ public class App {
             ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
             Mixtape mixtape = objectMapper.readValue(new File(mixtapeFilePath), Mixtape.class);
             List<Change> changes = objectMapper.readValue(new File(changesFilePath), new TypeReference<List<Change>>() {});
+
             MixtapeController mixtapeController = new MixtapeController(mixtape, changes);
             mixtapeController.mix();
+
             objectMapper.writeValue(new File(Constants.OUTPUT_FILE), mixtapeController.getMixtape());
-            logger.info("Completed applying changes to mix tape. Please check the log file and make sure that there were no errors.");
+            logger.info("Completed applying changes to mix tape.");
+            System.out.println("Please check the log file mixtapechanges.log and make sure that there were no errors.");
         }
         catch(Exception e){
             logger.error("Encountered an exception while applying the changes. Please check the log file for more information.", e);
