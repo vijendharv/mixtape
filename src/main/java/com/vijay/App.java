@@ -8,8 +8,6 @@ import com.vijay.model.change.Change;
 import org.apache.log4j.Logger;
 
 import java.io.File;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.List;
 
 public class App {
