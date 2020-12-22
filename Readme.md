@@ -35,6 +35,8 @@ Once built, the tool can be run using the following command.
 
 java -jar mixtape-1.0.jar *path-to-mixtape-json* *path-to-changes-json*
 
+The result will be an output.json (applying changes to mixtape) and a log file (mixtapechanges.log) with more information. The log file will have error information if any of the changes cannot be applied along with the record data. 
+
 ### Mixtape file
 Sample [mixtape.json](https://github.com/vijendharv/mixtape/blob/master/mixtape.json) file can be located at the root of this directory
 
