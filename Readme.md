@@ -33,7 +33,7 @@ The code can be built by running 'mvn clean package'. This generates mixtape-1.0
 
 Once built, the tool can be run using the following command.
 
-java -jar mixtape-1.0.jar <path to mixtape> <path to changes>
+java -jar mixtape-1.0.jar *path-to-mixtape-json* *path-to-changes-json*
 
 ### Mixtape file
 Sample [mixtape.json](https://github.com/vijendharv/mixtape/blob/master/mixtape.json) file can be located at the root of this directory
