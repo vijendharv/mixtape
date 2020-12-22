@@ -1,0 +1,23 @@
+[
+  {
+    "type": "AddPlaylist",
+    "user_id": "6",
+    "song_ids": [
+      "5",
+      "12",
+      "19",
+      "24",
+      "27",
+      "15"
+    ]
+  },
+  {
+    "type": "RemovePlaylist",
+    "playlist_id": "1"
+  },
+  {
+    "type": "AddSongToPlaylist",
+    "playlist_id": "2",
+    "song_id": "10"
+  }
+]
